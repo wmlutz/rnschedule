@@ -72,7 +72,7 @@ The dataArray prop must be an Array of appointment objects with the following fo
 |**`subtitle`**|Slightly less bolded subtitle.| String |`Not Required`|
 |**`start`**|When the appointment starts.| Date |`Required`|
 |**`end`**|When the appointment ends.| Date |`Required`|
-|**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) String/Object |`Not Required`|
+|**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) Accepted String/Object |`Not Required`|
 
 ## Built With
 
