@@ -42,6 +42,7 @@ export default App
 ## Properties API
 
 None of the following properties are required. A simple <RNSchedule /> Will still render an empty schedule.
+
 | Prop | Description | Default |
 |---|---|---|
 |**`hourSize`**|Change the width of lines between hours.|`depends on screen size`|
