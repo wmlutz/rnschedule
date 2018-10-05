@@ -1,0 +1,33 @@
+{
+  "name": "rnschedule",
+  "version": "0.0.1",
+  "description": "A react native component that provides a time-sensitive schedule view.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmlutz/rnschedule.git"
+  },
+  "author": "wmlutz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmlutz/rnschedule/issues"
+  },
+  "homepage": "https://github.com/wmlutz/rnschedule#readme",
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-native": "^0.57.1"
+  },
+  "devDependencies": {
+    "babel-preset-react-native": "^4.0.1",
+    "react": "^16.5.2",
+    "react-native": "^0.57.1"
+  },
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react-native-calendar-strip": "^1.3.4",
+    "tinycolor2": "^1.4.1"
+  }
+}
