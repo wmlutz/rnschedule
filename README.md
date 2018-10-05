@@ -2,7 +2,7 @@
 
 This React Native component provides a scheduling view with space for unused time. Similar to Google Calendar's Day View.
 
-### Installing
+## Installing
 
 Installing is pretty simple:
 
@@ -63,12 +63,15 @@ The dataArray prop must be an Array of appointment objects with the following fo
   }
 ]
 ```
+
+##### Appt Object API
+
 | Key | Description | Type | Req |
-|---|---|---|
+|---|---|---|---|
 |**`title`**|Top title for the appointment.| String |`Required`|
 |**`subtitle`**|Slightly less bolded subtitle.| String |`Not Required`|
-|**`start`**|When the appointment starts.| JS Date |`Required`|
-|**`end`**|When the appointment ends.| JS Date |`Required`|
+|**`start`**|When the appointment starts.| Date |`Required`|
+|**`end`**|When the appointment ends.| Date |`Required`|
 |**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) String/Object |`Not Required`|
 
 ## Built With
