@@ -53,14 +53,23 @@ None of the following properties are required. A simple <RNSchedule /> Will stil
 
 The dataArray prop must be an Array of appointment objects with the following format.
 ```
-{
-  title: 'Lunch Appointment', // REQUIRED - String
-  subtitle: 'With Harry', // NOT REQUIRED
-  start: new Date(2018, 11, 2, 13, 20), // REQUIRED - JS Date Object
-  end: new Date(2018, 11, 2, 14, 20), // NOT REQUIRED - JS Date Object
-  color: '#390099', // NOT REQUIRED - Color string. See [Tinycolor](https://github.com/bgrins/TinyColor) accepted formats.
-}
+[
+  {
+    title: 'Lunch Appointment',
+    subtitle: 'With Harry',
+    start: new Date(2018, 11, 2, 13, 20),
+    end: new Date(2018, 11, 2, 14, 20),
+    color: '#390099'
+  }
+]
 ```
+| Key | Description | Type | Req |
+|---|---|---|
+|**`title`**|Top title for the appointment.| String |`Required`|
+|**`subtitle`**|Slightly less bolded subtitle.| String |`Not Required`|
+|**`start`**|When the appointment starts.| JS Date |`Required`|
+|**`end`**|When the appointment ends.| JS Date |`Required`|
+|**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) String/Object |`Not Required`|
 
 ## Built With
 
@@ -68,13 +77,11 @@ The dataArray prop must be an Array of appointment objects with the following fo
 * [Tinycolor](https://github.com/bgrins/TinyColor) - Smart Color Management
 * [moment](http://momentjs.com/) - Time manipulation
 
+Thanks to these wonderful people for making some great stuff.
+
 ## Contributing
 
-I'm looking to add new contributors/maintainers to help out.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+I'm looking to add new contributors/maintainers to help out. So if you like this repo and want to help make it better let me know.
 
 ## To-Do List
 
@@ -93,4 +100,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Special Thanks
 
-* Special thanks to Wix's RN Calendar for getting things started.
+* Special thanks to Wix's RN Calendar for getting things started and providing inspiration.

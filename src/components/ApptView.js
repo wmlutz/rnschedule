@@ -20,9 +20,13 @@ const ApptView = ({appt, hour_size}) =>{
     <Text style={[{fontWeight: '600'},tinycolor(color).isDark() && {color: 'white'}]}>
       {appt.title}
     </Text>
-    <Text style={[{fontWeight: '200'},tinycolor(color).isDark() && {color: 'white'}]}>
-      {appt.subtitle}
-    </Text>
+    { !!appt.subtitle
+      ? <Text style={[{fontWeight: '200'},tinycolor(color).isDark() && {color: 'white'}]}>
+          {appt.subtitle}
+        </Text>
+      : null
+    }
+
   </View>
 }
 const startProc = (start, hour_size) => {
