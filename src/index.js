@@ -11,11 +11,12 @@ import ScheduledData from './components/ScheduledData'
 import SmartScroll from './components/SmartScroll'
 import {ContextProvider} from './components/ContextProvider'
 import tinycolor from 'tinycolor2';
+import Colors from './constants/colors';
 
-const RNSchedule = ({hourSize, dataArray, headerColor}) =>
+const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor}) =>
   <ContextProvider hour_size={hourSize}>
     <View style={styles.container}>
-      <Header header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : '#476889'}/>
+      <Header accent={accentColor} left_icon={leftIcon} header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : '#476889'}/>
       <SmartScroll hour_size={hourSize}>
         <View style={styles.body}>
           <View style={styles.hour_col}>
@@ -34,12 +35,22 @@ const RNSchedule = ({hourSize, dataArray, headerColor}) =>
 RNSchedule.propTypes = {
   hourSize: PropTypes.number,
   dataArray: PropTypes.array,
-  headerColor: PropTypes.string,
+  headerColor: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  leftIcon: PropTypes.node,
+  accentColor: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 }
 
 RNSchedule.defaultProps = {
   hourSize: Dimensions.get('window').height / 13.34,
-  headerColor: '#476889',
+  headerColor: Colors.light_gray,
+  leftIcon: null,
+  accentColor: Colors.blue,
 }
 
 export default RNSchedule

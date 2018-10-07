@@ -109,6 +109,7 @@ The component is very much under-construction. Want to help build something? Her
 * Full Day appointments.
 * Multi-Day appointments.
 * Events longer than 24 hours.
+* Spec UI to Material Design
 * Build out testing.
 * Contribution guidelines.
 
