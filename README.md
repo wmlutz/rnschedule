@@ -39,6 +39,15 @@ const App = () =>
 
 export default App
 ```
+
+## Features
+
+* Moving "now" bar.
+* Initial loads view on today centered on "now."
+* Customizable appointment colors.
+* Scaled size of an hour to improve readability on various device sizes.
+* Adjustable hour sizing to make it whatever you want.
+
 ## Properties API
 
 None of the following properties are required. A simple <RNSchedule /> Will still render an empty schedule.
@@ -87,6 +96,8 @@ Thanks to these wonderful people for making some great stuff.
 I'm looking to add new contributors/maintainers to help out. So if you like this repo and want to help make it better let me know.
 
 ## To-Do List
+
+The component is very much under-construction. Want to help build something? Here is my to-do list:
 
 * Fix overlapping appointment issues.
 * Provide more control over Calendar Strip Styling.
