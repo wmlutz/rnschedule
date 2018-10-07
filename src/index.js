@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
-import CalStrip from './components/CalStrip';
+import Header from './components/Header';
 import DrawnGrid from './components/DrawnGrid'
 import TimeCol from './components/TimeCol'
 import styles from './components/styles';
@@ -15,7 +15,7 @@ import tinycolor from 'tinycolor2';
 const RNSchedule = ({hourSize, dataArray, headerColor}) =>
   <ContextProvider hour_size={hourSize}>
     <View style={styles.container}>
-      <CalStrip header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : '#476889'}/>
+      <Header header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : '#476889'}/>
       <SmartScroll hour_size={hourSize}>
         <View style={styles.body}>
           <View style={styles.hour_col}>
