@@ -8,13 +8,20 @@ class ContextProvider extends Component {
     super(props);
     this.state = {
       date: moment(),
+      isDatePickerVisible: true,
       hour_size: props.hour_size || 50,
       setDate: (value) => {
-        this.setState({date: value})
+        this.setState({date: moment(value)})
+      },
+      toggleDatePicker: () => {
+        this.setState({isDatePickerVisible: !this.state.isDatePickerVisible})
       }
     }
   }
 
+  _setDate(value) {
+
+  }
   render() {
     return <AppContext.Provider value={this.state}>
       {this.props.children}

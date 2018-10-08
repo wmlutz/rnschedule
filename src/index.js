@@ -9,14 +9,16 @@ import HrLine from './components/HrLine'
 import NowBar from './components/NowBar'
 import ScheduledData from './components/ScheduledData'
 import SmartScroll from './components/SmartScroll'
+import DatePickeMe from './components/DatePickeMe'
 import {ContextProvider} from './components/ContextProvider'
 import tinycolor from 'tinycolor2';
 import Colors from './constants/colors';
 
-const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor}) =>
+const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor, status_bar}) =>
   <ContextProvider hour_size={hourSize}>
     <View style={styles.container}>
-      <Header accent={accentColor} left_icon={leftIcon} header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : '#476889'}/>
+      <Header status_bar={status_bar} accent={accentColor} left_icon={leftIcon} header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : '#476889'}/>
+      <DatePickeMe />
       <SmartScroll hour_size={hourSize}>
         <View style={styles.body}>
           <View style={styles.hour_col}>
@@ -44,6 +46,7 @@ RNSchedule.propTypes = {
     PropTypes.string,
     PropTypes.object,
   ]),
+  status_bar: PropTypes.bool,
 }
 
 RNSchedule.defaultProps = {
@@ -51,6 +54,7 @@ RNSchedule.defaultProps = {
   headerColor: Colors.light_gray,
   leftIcon: null,
   accentColor: Colors.blue,
+  status_bar: true,
 }
 
 export default RNSchedule
