@@ -18,7 +18,7 @@ yarn add rnschedule
 
 ## Example
 
-```
+```js
 import React from 'react';
 import RNSchedule from './component/RNSchedule';
 
