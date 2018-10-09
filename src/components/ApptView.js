@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import moment from 'moment';
 import tinycolor from 'tinycolor2';
 import Colors from '../constants/colors';
 
-const ApptView = ({appt, hour_size}) =>{
+const ApptView = ({appt}) =>{
   const color = tinycolor(appt.color).isValid() ? tinycolor(appt.color).toHexString() : Colors.red;
   return <View
     style={{
       width: '100%',
-      height: endProc(appt.start, appt.end, hour_size),
-      marginTop: startProc(appt.start, hour_size),
+      height: appt.height,
+      marginTop: appt.marginTop,
       backgroundColor: color,
       position: 'absolute',
       borderRadius: 5,
@@ -30,12 +29,5 @@ const ApptView = ({appt, hour_size}) =>{
 
   </View>
 }
-const startProc = (start, hour_size) => {
-  var midnight = new Date(start.getTime());
-  midnight.setHours(0,0,0,0);
-  return (((start-midnight)/3600000) * hour_size)
-}
-
-const endProc = (start, end, hour_size) => ((end-start)/3600000) * hour_size
 
 export default ApptView

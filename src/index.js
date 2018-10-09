@@ -13,27 +13,31 @@ import DatePickeMe from './components/DatePickeMe'
 import {ContextProvider} from './components/ContextProvider'
 import tinycolor from 'tinycolor2';
 import Colors from './constants/colors';
+import procData from './services/procData';
 
-const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor, status_bar}) =>
-  <ContextProvider hour_size={hourSize}>
-    <View style={styles.container}>
-      <Header status_bar={status_bar} accent={accentColor} left_icon={leftIcon} header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : Colors.light_gray}/>
-      <DatePickeMe />
-      <SmartScroll hour_size={hourSize}>
-        <View style={styles.body}>
-          <View style={styles.hour_col}>
-            <TimeCol hour_size={hourSize}/>
+const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor, status_bar}) =>{
+  const data = !!dataArray && procData(dataArray, hourSize)
+  return (
+    <ContextProvider hour_size={hourSize}>
+      <View style={styles.container}>
+        <Header status_bar={status_bar} accent={accentColor} left_icon={leftIcon} header_color={tinycolor(headerColor).isValid() ? tinycolor(headerColor).toHexString() : Colors.light_gray}/>
+        <DatePickeMe />
+        <SmartScroll hour_size={hourSize}>
+          <View style={styles.body}>
+            <View style={styles.hour_col}>
+              <TimeCol hour_size={hourSize}/>
+            </View>
+            <View style={styles.schedule_col}>
+              <DrawnGrid/>
+              <NowBar hour_size={hourSize}/>
+              { !!dataArray && <ScheduledData dataArray={data}/> }
+            </View>
           </View>
-          <View style={styles.schedule_col}>
-            <DrawnGrid/>
-            <NowBar hour_size={hourSize}/>
-            { !!dataArray && <ScheduledData dataArray={dataArray}/> }
-          </View>
-        </View>
-      </SmartScroll>
-    </View>
-  </ContextProvider>
-
+        </SmartScroll>
+      </View>
+    </ContextProvider>
+  )
+}
 RNSchedule.propTypes = {
   hourSize: PropTypes.number,
   dataArray: PropTypes.array,

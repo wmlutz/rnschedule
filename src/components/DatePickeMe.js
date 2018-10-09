@@ -11,7 +11,7 @@ class DatePickeMe extends Component {
     return (
       <AppContext.Consumer>
         {(context) =>
-          <Collapsible collapsed={context.isDatePickerVisible}>
+          <Collapsible collapsed={!context.isDatePickerVisible}>
             <Calendar
               onDayPress={(day) => context.setDate(day.dateString)}
               monthFormat={'MMMM yyyy'}

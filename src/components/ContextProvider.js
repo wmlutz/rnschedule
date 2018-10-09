@@ -8,11 +8,11 @@ class ContextProvider extends Component {
     super(props);
     this.state = {
       date: moment(),
-      isDatePickerVisible: true,
+      isDatePickerVisible: false,
       hour_size: props.hour_size || 50,
       setDate: (value) => {
-        this.state.toggleDatePicker();
         this.setState({
+          isDatePickerVisible: false,
           date: moment(value)
         });
       },
@@ -21,6 +21,7 @@ class ContextProvider extends Component {
       },
       goToToday: () => {
         this.setState({
+          isDatePickerVisible: false,
           date: moment()
         });
       }
