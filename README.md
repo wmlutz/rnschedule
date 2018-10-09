@@ -47,8 +47,6 @@ export default App
 
 ![Gif Demo](https://github.com/wmlutz/rnschedule/blob/screenshots/assets/demo1.gif)
 
-![Demo 1](https://github.com/wmlutz/rnschedule/blob/screenshots/assets/demo2.png)
-
 ## Features
 
 * Moving "now" bar.
