@@ -43,7 +43,7 @@ const App = () =>
 export default App
 ```
 
-## Demos
+## Demo
 
 ![Gif Demo](https://github.com/wmlutz/rnschedule/blob/screenshots/assets/demo1.gif)
 
