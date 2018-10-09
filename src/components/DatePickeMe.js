@@ -1,18 +1,28 @@
 import React, {Component} from 'react';
-import {View, Modal, Text} from 'react-native';
 import {AppContext} from './ContextProvider';
-import DateTimePicker from 'react-native-modal-datetime-picker';
+import Collapsible from 'react-native-collapsible';
+import { Button } from 'react-native';
+import { Calendar } from 'react-native-calendars';
+import moment from 'moment';
+import Colors from '../constants/colors';
 
 class DatePickeMe extends Component {
   render() {
     return (
       <AppContext.Consumer>
         {(context) =>
-          <DateTimePicker
-            isVisible={context.isDatePickerVisible}
-            onConfirm={context.setDate}
-            onCancel={context.hideDateTimePicker}
-          />
+          <Collapsible collapsed={context.isDatePickerVisible}>
+            <Calendar
+              onDayPress={(day) => context.setDate(day.dateString)}
+              monthFormat={'MMMM yyyy'}
+              hideExtraDays={true}
+              firstDay={1}
+              markedDates={{
+                [context.date.format('YYYY-MM-DD')]: {selected: true, selectedColor: Colors.light_blue},
+                [moment().format('YYYY-MM-DD')]: {selected: true, selectedColor: Colors.blue},
+              }}
+            />
+          </Collapsible>
         }
       </AppContext.Consumer>
     )

@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "moment": "^2.22.2",
-    "react-native-modal-datetime-picker": "^6.0.0",
+    "react-native-calendars": "^1.21.0",
+    "react-native-collapsible": "^1.2.0",
     "tinycolor2": "^1.4.1"
   }
 }

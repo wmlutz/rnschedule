@@ -46,7 +46,7 @@ export default App
 * Initial loads view on today centered on "now."
 * Customizable appointment colors.
 * Scaled size of an hour to improve readability on various device sizes.
-* Adjustable hour sizing to make it whatever you want.
+* Adjustable hour sizing to make it size to whatever you want.
 
 ## Properties API
 
@@ -85,7 +85,7 @@ The dataArray prop must be an Array of appointment objects with the following fo
 
 ## Built With
 
-* [React Native Calendar Strip](https://github.com/BugiDev/react-native-calendar-strip) - Calendar section strip
+* [React Native Calendars (Wix)](https://github.com/wix/react-native-calendars) - Day selection
 * [Tinycolor](https://github.com/bgrins/TinyColor) - Smart Color Management
 * [moment](http://momentjs.com/) - Time manipulation
 
@@ -100,16 +100,16 @@ I'm looking to add new contributors/maintainers to help out. So if you like this
 The component is very much under-construction. Want to help build something? Here is my to-do list:
 
 * Fix overlapping appointment issues.
-* Provide more control over Calendar Strip Styling.
+* Provide more control over Day Selector Styling.
 * Work on speed optimization.
 * Make momentjs date objects acceptable inputs.
-* Add drop down calendar picker to date selection strip.
 * Add onPress method for appointments.
 * Swipe to change days.
 * Full Day appointments.
 * Multi-Day appointments.
+* Option for dots on days with appts.
 * Events longer than 24 hours.
-* Spec UI to Material Design
+* Spec UI to Material Design.
 * Build out testing.
 * Contribution guidelines.
 

@@ -24,19 +24,17 @@ const Header = ({header_color, left_icon, accent, status_bar}) => {
           <View style={[styles.container, {backgroundColor: header_color, marginTop: marginTop}]} >
             <View style={styles.text_row}>
               { left_icon }
-              <TouchableOpacity onPress={() => context.toggleDatePicker()}>
-                <View style={styles.center} >
-                  <View style={styles.day_box}>
-                    <Text style={[styles.dotw, {color: accent_color}]}>{context.date.format("ddd").toUpperCase()}</Text>
-                    <View style={[styles.circle, {backgroundColor: accent_color}]}>
-                      <Text style={[styles.day, {color: accent_text_color}]}>{context.date.format("D")}</Text>
-                    </View>
+              <TouchableOpacity style={styles.center} onPress={() => context.toggleDatePicker()}>
+                <View style={styles.day_box}>
+                  <Text style={[styles.dotw, {color: accent_color}]}>{context.date.format("ddd").toUpperCase()}</Text>
+                  <View style={[styles.circle, {backgroundColor: accent_color}]}>
+                    <Text style={[styles.day, {color: accent_text_color}]}>{context.date.format("D")}</Text>
                   </View>
-                  <Text style={[styles.month, {color: text_color}]}>{context.date.format("MMMM")}</Text>
-                  <Image source={arrow} style={styles.arrow}/>
                 </View>
+                <Text style={[styles.month, {color: text_color}]}>{context.date.format("MMMM")}</Text>
+                <Image source={arrow} style={styles.arrow}/>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.img} onPress={() => console.log('go to today')}>
+              <TouchableOpacity style={styles.img} onPress={() => context.goToToday()}>
                 <Image source={icon}/>
               </TouchableOpacity>
             </View>
@@ -46,8 +44,5 @@ const Header = ({header_color, left_icon, accent, status_bar}) => {
     </AppContext.Consumer>
   )
 }
-
-//   onDateSelected={(value) => context.setDate(value)}
-//   selectedDate={context.date}
 
 export default Header;

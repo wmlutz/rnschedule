@@ -2,9 +2,10 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import moment from 'moment';
 import tinycolor from 'tinycolor2';
+import Colors from '../constants/colors';
 
 const ApptView = ({appt, hour_size}) =>{
-  const color = tinycolor(appt.color).isValid() ? tinycolor(appt.color).toHexString() : '#390099';
+  const color = tinycolor(appt.color).isValid() ? tinycolor(appt.color).toHexString() : Colors.red;
   return <View
     style={{
       width: '100%',
