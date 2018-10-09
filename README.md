@@ -6,9 +6,6 @@ This React Native component provides a scheduling view with space for unused tim
 
 Installing is pretty simple:
 
-
-https://github.com/wmlutz/rnschedule/blob/screenshots/assets/demo1.gif      
-
 ```
 npm install rnschedule
 ```
