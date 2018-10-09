@@ -95,6 +95,7 @@ The dataArray prop must be an Array of appointment objects with the following fo
 * [React Native Calendars (Wix)](https://github.com/wix/react-native-calendars) - Day selection
 * [Tinycolor](https://github.com/bgrins/TinyColor) - Smart Color Management
 * [Moment](http://momentjs.com/) - Time manipulation
+* [React Native Collapsible](https://github.com/oblador/react-native-collapsible) - Calendar drop down
 
 Thanks to these wonderful people for making some great stuff.
 
