@@ -52,11 +52,14 @@ export default App
 
 None of the following properties are required. A simple <RNSchedule /> Will still render an empty schedule.
 
-| Prop | Description | Default |
-|---|---|---|
-|**`hourSize`**|Change the width of lines between hours.|`depends on screen size`|
-|**`headerColor`**|Color of the calendar header strip. Acceptable formats: Hex, RGB(A), HSL(A), HSV(A), and named strings. See [Tinycolor](https://github.com/bgrins/TinyColor) for all formats.|`#476889`|
-|**`dataArray`**|Array of date appointment objects. See below example.|`Empty Array`|
+| Prop | Description | Default | Type |
+|---|---|---|---|
+|**`hourSize`**|Change the width of lines between hours.|`depends on screen size`| Number |
+|**`headerColor`**|Background color of the calendar header strip. Acceptable formats: Hex, RGB(A), HSL(A), HSV(A), and named strings. See [Tinycolor](https://github.com/bgrins/TinyColor) for all formats.|`#F5F5F6`| String or Object |
+|**`dataArray`**|Array of date appointment objects. See below example.|`Empty Array`| Array |
+|**`leftIcon`**|Include your own icon to the left of the day number.|`Null`| React Component |
+|**`accentColor`**|Color of day circle in top left. Accepts [Tinycolor](https://github.com/bgrins/TinyColor) formats.|`#1976d2`| String or Object |
+|**`status_bar`**|Do you want extra margin for the status bar for iOS?|`true`| Boolean |
 
 ## Data Array Appt Objects
 
@@ -87,7 +90,7 @@ The dataArray prop must be an Array of appointment objects with the following fo
 
 * [React Native Calendars (Wix)](https://github.com/wix/react-native-calendars) - Day selection
 * [Tinycolor](https://github.com/bgrins/TinyColor) - Smart Color Management
-* [moment](http://momentjs.com/) - Time manipulation
+* [Moment](http://momentjs.com/) - Time manipulation
 
 Thanks to these wonderful people for making some great stuff.
 
