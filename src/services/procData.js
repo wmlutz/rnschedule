@@ -1,26 +1,20 @@
-import moment from 'moment';
+import {duration} from './hrsToPx'
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
+const moment = extendMoment(Moment);
 
 const procData = (dataArray, hour_size) => {
-  return dataArray.map(appt => {
+  let setData = dataArray.map(appt => {
     appt.start = moment(appt.start);
     appt.end = moment(appt.end);
-    appt.marginTop = hoursToStart(appt.start) * hour_size
     appt.height = duration(appt.start, appt.end) * hour_size;
+    appt.range = moment.range(appt.start, appt.end);
     return appt;
   })
+
+  setData.sort((a, b) => a.start - b.start);
+
+  return setData;
 }
 
-const hoursToStart = (start) => start.diff(start.clone().startOf('day'), 'hours', true)
-
-const duration = (start, end) => end.diff(start, 'hours', true)
-
 export default procData;
-
-
-// {
-//   title: 'Appointment Title',
-//   subtitle: 'With a Person',
-//   start: new Date(2018, month, day, hour, minute),
-//   end: new Date(2018, month, day, hour, minute + 90),
-//   color: tinycolor.random().toHexString(),
-// }

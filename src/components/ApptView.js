@@ -2,16 +2,18 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import tinycolor from 'tinycolor2';
 import Colors from '../constants/colors';
+import {hrsToStart} from '../services/hrsToPx';
 
-const ApptView = ({appt}) =>{
+const ApptView = ({topTime, appt, hour_size}) => {
   const color = tinycolor(appt.color).isValid() ? tinycolor(appt.color).toHexString() : Colors.red;
+  const margin = hrsToStart(appt.start, topTime) * hour_size;
+
   return <View
     style={{
-      width: '100%',
+      flex: 1,
+      marginTop: margin,
       height: appt.height,
-      marginTop: appt.marginTop,
       backgroundColor: color,
-      position: 'absolute',
       borderRadius: 5,
       padding: 2,
       overflow: 'hidden',
@@ -26,8 +28,7 @@ const ApptView = ({appt}) =>{
         </Text>
       : null
     }
-
   </View>
 }
 
-export default ApptView
+export default ApptView;

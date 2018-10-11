@@ -86,8 +86,8 @@ The dataArray prop must be an Array of appointment objects with the following fo
 |---|---|---|---|
 |**`title`**|Top title for the appointment.| String |`Required`|
 |**`subtitle`**|Slightly less bolded subtitle.| String |`Not Required`|
-|**`start`**|When the appointment starts.| Date |`Required`|
-|**`end`**|When the appointment ends.| Date |`Required`|
+|**`start`**|When the appointment starts.| Date or MomentJs Obj |`Required`|
+|**`end`**|When the appointment ends.| Date or MomentJs Obj |`Required`|
 |**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) Accepted String/Object |`Not Required`|
 
 ## Built With
@@ -95,6 +95,7 @@ The dataArray prop must be an Array of appointment objects with the following fo
 * [React Native Calendars (Wix)](https://github.com/wix/react-native-calendars) - Day selection
 * [Tinycolor](https://github.com/bgrins/TinyColor) - Smart Color Management
 * [Moment](http://momentjs.com/) - Time manipulation
+* [Moment Range](https://github.com/rotaready/moment-range) - MomentJS extension for fancy date ranges
 * [React Native Collapsible](https://github.com/oblador/react-native-collapsible) - Calendar drop down
 
 Thanks to these wonderful people for making some great stuff.
@@ -107,10 +108,8 @@ I'm looking to add new contributors/maintainers to help out. So if you like this
 
 The component is very much under-construction. Want to help build something? Here is my to-do list:
 
-* Fix overlapping appointment issues.
 * Provide more control over Day Selector Styling.
 * Work on speed optimization.
-* Make momentjs date objects acceptable inputs.
 * Add onPress method for appointments.
 * Swipe to change days.
 * Full Day appointments.
