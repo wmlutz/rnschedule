@@ -35,6 +35,7 @@ const data = [
 const App = () =>
   <RNSchedule
     dataArray={data}
+    onEventPress={(appt) => console.log(appt)}
   />
 
 export default App
@@ -64,6 +65,7 @@ None of the following properties are required. A simple <RNSchedule /> Will stil
 |**`leftIcon`**|Include your own icon to the left of the day number.|`Null`| React Component |
 |**`accentColor`**|Color of day circle in top left. Accepts [Tinycolor](https://github.com/bgrins/TinyColor) formats.|`#1976d2`| String or Object |
 |**`status_bar`**|Do you want extra margin for the status bar for iOS?|`true`| Boolean |
+|**`onEventPress`**|Return function for pressing a schedule event. Returns original data plus moment and moment-range.|`null`| Function |
 
 ## Data Array Appt Objects
 
@@ -90,6 +92,8 @@ The dataArray prop must be an Array of appointment objects with the following fo
 |**`end`**|When the appointment ends.| Date or MomentJs Obj |`Required`|
 |**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) Accepted String/Object |`Not Required`|
 
+For onEventPress function - additional properties may be passed so long as they don't interfere with the above api.
+
 ## Built With
 
 * [React Native Calendars (Wix)](https://github.com/wix/react-native-calendars) - Day selection
@@ -110,7 +114,6 @@ The component is very much under-construction. Want to help build something? Her
 
 * Provide more control over Day Selector Styling.
 * Work on speed optimization.
-* Add onPress method for appointments.
 * Swipe to change days.
 * Full Day appointments.
 * Multi-Day appointments.

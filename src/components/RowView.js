@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import ApptView from './ApptView';
 
-const RowView = ({row, hour_size}) =>{
+const RowView = ({row, hour_size, onEventPress}) =>{
   return <View
     style={{
       width: '100%',
@@ -12,7 +12,7 @@ const RowView = ({row, hour_size}) =>{
       justifyContent: 'space-around',
     }}
   >
-    {row.rowAppts.map((appt, i) => <ApptView key={i} topTime={row.range.start} appt={appt} hour_size={hour_size}/>)}
+    {row.rowAppts.map((appt, i) => <ApptView key={i} topTime={row.range.start} appt={appt} hour_size={hour_size} onEventPress={onEventPress}/>)}
   </View>
 }
 

@@ -15,7 +15,7 @@ import tinycolor from 'tinycolor2';
 import Colors from './constants/colors';
 import procData from './services/procData';
 
-const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor, status_bar}) => {
+const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor, status_bar, onEventPress}) => {
   let data = !!dataArray && procData(dataArray, hourSize);
 
   return (
@@ -31,7 +31,7 @@ const RNSchedule = ({hourSize, dataArray, headerColor, leftIcon, accentColor, st
             <View style={styles.schedule_col}>
               <DrawnGrid/>
               <NowBar hour_size={hourSize}/>
-              { !!data && <ScheduledData dataArray={data}/> }
+              { !!data && <ScheduledData dataArray={data} onEventPress={onEventPress}/> }
             </View>
           </View>
         </SmartScroll>
