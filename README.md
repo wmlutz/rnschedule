@@ -122,7 +122,7 @@ The component is very much under-construction. Want to help build something? Her
 * Spec UI to Material Design.
 * Build out testing.
 * Contribution guidelines.
-* Break out non-header view as stand-alone.
+* Break out schedule view as stand-alone without cal select header.
 
 ## Special Thanks
 
