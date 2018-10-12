@@ -20,7 +20,7 @@ yarn add rnschedule
 
 ```js
 import React from 'react';
-import RNSchedule from './component/RNSchedule';
+import RNSchedule from 'rnschedule';
 
 const data = [
     {
