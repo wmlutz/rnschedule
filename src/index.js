@@ -52,6 +52,7 @@ RNSchedule.propTypes = {
     PropTypes.string,
     PropTypes.object,
   ]),
+  onEventPress: PropTypes.func,
   status_bar: PropTypes.bool,
 }
 
@@ -61,6 +62,7 @@ RNSchedule.defaultProps = {
   leftIcon: null,
   accentColor: Colors.blue,
   status_bar: true,
+  onEventPress: () => {},
 }
 
 export default RNSchedule
