@@ -13,7 +13,7 @@ const Header = ({header_color, left_icon, accent, status_bar}) => {
   var icon = color1.isDark()
     ? require('../icons/calendar_today_white.png')
     : require('../icons/calendar_today_black.png');
-  var arrow = color1.isDark()
+  var arrow_down = color1.isDark()
     ? require('../icons/arrow_drop_down_white.png')
     : require('../icons/arrow_drop_down_black.png');
 
@@ -32,7 +32,7 @@ const Header = ({header_color, left_icon, accent, status_bar}) => {
                   </View>
                 </View>
                 <Text style={[styles.month, {color: text_color}]}>{context.date.format("MMMM")}</Text>
-                <Image source={arrow} style={styles.arrow}/>
+                <Image source={arrow_down} style={context.isDatePickerVisible ? styles.arrow_up : styles.arrow_down}/>
               </TouchableOpacity>
               <TouchableOpacity style={styles.img} onPress={() => context.goToToday()}>
                 <Image source={icon}/>

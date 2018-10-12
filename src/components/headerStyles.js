@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.6,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.99,
     shadowRadius: 3,
     elevation: 3,
     zIndex: 999,
@@ -61,8 +61,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
   },
-  arrow: {
+  arrow_down: {
     paddingLeft: 15,
+  },
+  arrow_up: {
+    paddingLeft: 15,
+    transform:[{rotate: '180 deg'}]
   }
 });
 

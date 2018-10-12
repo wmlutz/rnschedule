@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppContext} from './ContextProvider';
 import Collapsible from 'react-native-collapsible';
-import { Button } from 'react-native';
+import { View } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 import Colors from '../constants/colors';
@@ -20,6 +20,7 @@ const DatePickeMe = () =>
             [moment().format('YYYY-MM-DD')]: {selected: true, selectedColor: Colors.blue},
           }}
         />
+        <View style={{backgroundColor: 'black', width: '100%', height: 1}} />
       </Collapsible>
     }
   </AppContext.Consumer>
