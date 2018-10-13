@@ -123,6 +123,7 @@ The component is very much under-construction. Want to help build something? Her
 * Build out testing.
 * Contribution guidelines.
 * Break out schedule view as stand-alone without cal select header.
+* Fix Shadowing on Header - feels weird.
 
 ## Special Thanks
 
