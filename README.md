@@ -88,8 +88,8 @@ The dataArray prop must be an Array of appointment objects with the following fo
 |---|---|---|---|
 |**`title`**|Top title for the appointment.| String |`Required`|
 |**`subtitle`**|Slightly less bolded subtitle.| String |`Not Required`|
-|**`start`**|When the appointment starts.| Date or MomentJs Obj |`Required`|
-|**`end`**|When the appointment ends.| Date or MomentJs Obj |`Required`|
+|**`start`**|When the appointment starts.| Date |`Required`|
+|**`end`**|When the appointment ends.| Date |`Required`|
 |**`color`**|Background color for the appointment.| [Tinycolor](https://github.com/bgrins/TinyColor) Accepted String/Object |`Not Required`|
 
 For onEventPress function - additional properties may be passed so long as they don't interfere with the above api.
