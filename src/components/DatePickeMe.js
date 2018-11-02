@@ -16,7 +16,7 @@ const DatePickeMe = () =>
           hideExtraDays={true}
           firstDay={1}
           markedDates={{
-            [moment(context.date).format('YYYY-MM-DD')]: {selected: true, selectedColor: Colors.light_blue},
+            [moment(context.date.getTime()).format('YYYY-MM-DD')]: {selected: true, selectedColor: Colors.light_blue},
             [moment().format('YYYY-MM-DD')]: {selected: true, selectedColor: Colors.blue},
           }}
         />

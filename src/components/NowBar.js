@@ -61,8 +61,8 @@ class NowBar extends Component {
 }
 
 const sameDay = (d1, d2) => {
-  console.log('d1, d2', d1, d2)
-  return true;
+  console.log('nowbar d1, d2', typeof d1, typeof d2)
+  console.log('nowbar d1, d2', d1, d2)
   return d1.getDate() === d2.getDate() &&
   d1.getMonth() === d2.getMonth() && 
   d1.getFullYear() === d2.getFullYear();
