@@ -3,6 +3,7 @@ import { View, Text, Platform, Image, TouchableOpacity } from 'react-native'
 import {AppContext} from './ContextProvider';
 import tinycolor from 'tinycolor2';
 import styles from './headerStyles';
+import moment from 'moment';
 
 const Header = ({header_color, left_icon, accent, status_bar}) => {
   var color1 = tinycolor(header_color);
@@ -26,12 +27,12 @@ const Header = ({header_color, left_icon, accent, status_bar}) => {
               { left_icon }
               <TouchableOpacity style={styles.center} onPress={() => context.toggleDatePicker()}>
                 <View style={styles.day_box}>
-                  <Text style={[styles.dotw, {color: accent_color}]}>{context.date.format("ddd").toUpperCase()}</Text>
+                  <Text style={[styles.dotw, {color: accent_color}]}>{moment(context.date).format("ddd").toUpperCase()}</Text>
                   <View style={[styles.circle, {backgroundColor: accent_color}]}>
-                    <Text style={[styles.day, {color: accent_text_color}]}>{context.date.format("D")}</Text>
+                    <Text style={[styles.day, {color: accent_text_color}]}>{moment(context.date).format("D")}</Text>
                   </View>
                 </View>
-                <Text style={[styles.month, {color: text_color}]}>{context.date.format("MMMM")}</Text>
+                <Text style={[styles.month, {color: text_color}]}>{moment(context.date).format("MMMM")}</Text>
                 <Image source={arrow_down} style={context.isDatePickerVisible ? styles.arrow_up : styles.arrow_down}/>
               </TouchableOpacity>
               <TouchableOpacity style={styles.img} onPress={() => context.goToToday()}>
