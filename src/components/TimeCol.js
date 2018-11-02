@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import Time from '../constants/time';
+import TimeArr from '../constants/time';
 
 const TimeCol = ({hour_size}) =>
   <View style={{paddingTop: hour_size / 2}}>
-    {Time.forEach((val) =>
+    {TimeArr.map(val =>
       <View style={[styles.box, {height: hour_size}]} key={val}>
         <Text style={styles.textStyle}>{val}</Text>
       </View>
