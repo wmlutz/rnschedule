@@ -23,13 +23,7 @@ const procRows = (inputData) => { // Predicated on appts sorted by start
   return outputData;
 }
 
-const overlaps = (a, b) => {
-  console.log('overlap', a, b)
-  let cond1 = a.start <= b.start <= a.end
-  let cond2 = a.start <= b.end <= a.end
-  console.log('cond 1, cond 2', cond1, cond2, cond1 || cond2)
-  return cond1 || cond2;
-}
+const overlaps = (a, b) => (a.start <= b.start && b.start <= a.end) || (a.start <= b.end && b.end <= a.end);
 
 const addToEnd = (sumEnd, addedEnd) => sumEnd > addedEnd ? sumEnd : addedEnd
 
