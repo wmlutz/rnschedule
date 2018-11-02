@@ -1,19 +1,19 @@
 import {hrsToStart} from './hrsToPx';
 
-const procRows = (inputData) => {
+const procRows = (inputData) => { // Predicated on sorting appts by start time
   let outputData = [];
 
   inputData.forEach(appt => {
-    let index = outputData.findIndex((el) => !!el.range && el.range.overlaps(appt.range));
+    let index = outputData.findIndex((el) => overlaps(appt, el));
 
     if (index >= 0) {
-      outputData[index].rowAppts.push(appt);
-      outputData[index].range = outputData[index].range.add(appt.range);
-      outputData[index].hrsBefore = hrsToStart(outputData[index].range.start);
+      outputData[index].rowAppts.push(appt);;
+      outputData[index].end = addToEnd(outputData[index].end, appt.end)
     } else {
       outputData.push({
         hrsBefore: hrsToStart(appt.start),
-        range: appt.range.clone(),
+        start: appt.start,
+        end: appt.end,
         rowAppts: [appt]
       })
     }
@@ -22,4 +22,23 @@ const procRows = (inputData) => {
   return outputData;
 }
 
+const overlaps = (a, b) => {
+  // if ()
+  // if b.start is between (and including) a.start and a.end
+  // OR b.end is between (and including) a.start and a.end
+}
+
+const addToEnd = (sumEnd, addedEnd) => {
+  // if addedEnd is before sumEnd return sumEnd
+  // else return addedEnd
+}
+
 export default procRows;
+
+// {
+//   title: 'Appointment Alpha',
+//   subtitle: '1st Appt',
+//   start: moment(new Date(2018, new Date().getMonth(), new Date().getDate(), 13, 15)),
+//   end: moment(new Date(2018, new Date().getMonth(), new Date().getDate(), 13, 105)),
+//   color: 'red',
+// }
