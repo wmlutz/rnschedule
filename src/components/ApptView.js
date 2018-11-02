@@ -20,9 +20,9 @@ const ApptView = ({topTime, appt, hour_size, onEventPress}) => {
     }}
   >
     <TouchableOpacity
-        onPress={() => onEventPress(appt)}
-        style={{margin: 0, padding: 0, flex: 1}}
-      >
+      onPress={() => onEventPress(appt)}
+      style={{margin: 0, padding: 0, flex: 1}}
+    >
       <Text style={[{fontWeight: '600'},tinycolor(color).isDark() && {color: 'white'}]}>
         {appt.title}
       </Text>

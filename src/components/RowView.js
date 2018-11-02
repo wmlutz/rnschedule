@@ -12,7 +12,7 @@ const RowView = ({row, hour_size, onEventPress}) =>{
       justifyContent: 'space-around',
     }}
   >
-    {row.rowAppts.map((appt, i) => <ApptView key={i} topTime={row.range.start} appt={appt} hour_size={hour_size} onEventPress={onEventPress}/>)}
+    {row.rowAppts.map((appt, i) => <ApptView key={i} topTime={row.start} appt={appt} hour_size={hour_size} onEventPress={onEventPress}/>)}
   </View>
 }
 

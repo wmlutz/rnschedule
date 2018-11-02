@@ -1,23 +1,20 @@
 import procRows from './procRows';
 
-const todayData = (dataArray, date1) => {
-  
+const todayData = (dataArray, date) => {
   if (!dataArray) { return [] }
-    let date = new Date(date1)
-    const today = dataArray.filter(appt => {
-      apptStart = new Date(appt.start)
-      apptEnd = new Date(appt.end)
-      ret = sameDay(apptStart, date);
-      ret1 = sameDay(apptEnd, date);
-      return ret || ret1
-    });
-    return procRows(today);
+
+  const today = dataArray.filter(appt => {
+    ret = sameDay(appt.start, date);
+    ret1 = sameDay(appt.end, date);
+    return ret || ret1;
+  });
+  return procRows(today);
 }
 
-function sameDay(d1, d2) {
-  return d1.getFullYear() === d2.getFullYear() &&
-    d1.getMonth() === d2.getMonth() &&
-    d1.getDate() === d2.getDate();
+const sameDay = (d1, d2) => {
+  return d1.getDate() === d2.getDate() &&
+  d1.getMonth() === d2.getMonth() && 
+  d1.getFullYear() === d2.getFullYear();
 }
 
 export default todayData;

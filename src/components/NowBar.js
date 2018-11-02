@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { View } from 'react-native';
 import {AppContext} from './ContextProvider';
-import moment from 'moment';
 
 class NowBar extends Component {
   constructor(props) {
@@ -45,7 +44,7 @@ class NowBar extends Component {
     return (
       <AppContext.Consumer>
         {(context) => {
-          if (!moment().isSame(context.date, 'day')) { return null }
+          if (!sameDay(context.date, new Date())) { return null }
           return <View
             style={{
               width: '100%',
@@ -61,4 +60,9 @@ class NowBar extends Component {
   }
 }
 
+const sameDay = (d1, d2) => {
+  return d1.getDate() === d2.getDate() &&
+  d1.getMonth() === d2.getMonth() && 
+  d1.getFullYear() === d2.getFullYear();
+}
 export default NowBar

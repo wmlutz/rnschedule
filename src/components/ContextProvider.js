@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
-import moment from 'moment';
 
-const AppContext = React.createContext(moment());
+const AppContext = React.createContext(new Date());
 
 class ContextProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: moment(),
+      date: new Date(),
       isDatePickerVisible: false,
       hour_size: props.hour_size || 50,
       setDate: (value) => {
         this.setState({
           isDatePickerVisible: false,
-          date: moment(value)
+          date: value
         });
       },
       toggleDatePicker: () => {
@@ -22,15 +21,12 @@ class ContextProvider extends Component {
       goToToday: () => {
         this.setState({
           isDatePickerVisible: false,
-          date: moment()
+          date: new Date()
         });
       }
     }
   }
 
-  _setDate(value) {
-
-  }
   render() {
     return <AppContext.Provider value={this.state}>
       {this.props.children}

@@ -1,6 +1,6 @@
 import {hrsToStart} from './hrsToPx';
 
-const procRows = (inputData) => { // Predicated on sorting appts by start time
+const procRows = (inputData) => { // Predicated on appts sorted by start
   let outputData = [];
 
   inputData.forEach(appt => {
@@ -22,23 +22,8 @@ const procRows = (inputData) => { // Predicated on sorting appts by start time
   return outputData;
 }
 
-const overlaps = (a, b) => {
-  // if ()
-  // if b.start is between (and including) a.start and a.end
-  // OR b.end is between (and including) a.start and a.end
-}
+const overlaps = (a, b) => a.start <= b.start <= a.end || a.start <= b.end <= a.end
 
-const addToEnd = (sumEnd, addedEnd) => {
-  // if addedEnd is before sumEnd return sumEnd
-  // else return addedEnd
-}
+const addToEnd = (sumEnd, addedEnd) => sumEnd > addedEnd ? sumEnd : addedEnd
 
 export default procRows;
-
-// {
-//   title: 'Appointment Alpha',
-//   subtitle: '1st Appt',
-//   start: moment(new Date(2018, new Date().getMonth(), new Date().getDate(), 13, 15)),
-//   end: moment(new Date(2018, new Date().getMonth(), new Date().getDate(), 13, 105)),
-//   color: 'red',
-// }
