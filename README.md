@@ -65,7 +65,7 @@ None of the following properties are required. A simple <RNSchedule /> Will stil
 |**`leftIcon`**|Include your own icon to the left of the day number.|`Null`| React Component |
 |**`accentColor`**|Color of day circle in top left. Accepts [Tinycolor](https://github.com/bgrins/TinyColor) formats.|`#1976d2`| String or Object |
 |**`status_bar`**|Do you want extra margin for the status bar for iOS?|`true`| Boolean |
-|**`onEventPress`**|Return function for pressing a schedule event. Returns original data plus moment and moment-range.|`null`| Function |
+|**`onEventPress`**|Return function for pressing a schedule event. Returns original data.|`null`| Function |
 
 ## Data Array Appt Objects
 
@@ -98,8 +98,7 @@ For onEventPress function - additional properties may be passed so long as they 
 
 * [React Native Calendars (Wix)](https://github.com/wix/react-native-calendars) - Day selection
 * [Tinycolor](https://github.com/bgrins/TinyColor) - Smart Color Management
-* [Moment](http://momentjs.com/) - Time manipulation
-* [Moment Range](https://github.com/rotaready/moment-range) - MomentJS extension for fancy date ranges
+* [Moment](http://momentjs.com/) - Date/Time manipulation
 * [React Native Collapsible](https://github.com/oblador/react-native-collapsible) - Calendar drop down
 
 Thanks to these wonderful people for making some great stuff.
