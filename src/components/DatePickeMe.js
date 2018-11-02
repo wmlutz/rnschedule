@@ -11,7 +11,10 @@ const DatePickeMe = () =>
     {(context) =>
       <Collapsible collapsed={!context.isDatePickerVisible}>
         <Calendar
-          onDayPress={(day) => context.setDate(new Date(day.timestamp))}
+          onDayPress={(day) => {
+            console.log(day.timestamp, new Date(day.timestamp), day.day, day.dateString)
+            context.setDate(new Date(day.timestamp))
+          }}
           monthFormat={'MMMM yyyy'}
           hideExtraDays={true}
           firstDay={1}
