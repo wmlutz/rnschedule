@@ -34,7 +34,7 @@ const data = [
 
 const App = () =>
   <RNSchedule
-    dataArray={data}
+    data={data}
     onEventPress={(appt) => console.log(appt)}
   />
 
